@@ -1,0 +1,71 @@
+#importante{
+    color:chartreuse;
+}
+.table {
+    color: blueviolet;
+}
+.warning {
+    background-color: darkred;
+}
+p.warning {
+    color: white;
+}
+h1.warning {
+    color: black;
+}
+.special {
+    background-color: yellow;
+    font-weight: bold;
+}
+.warning.special {
+    color: blue;
+}
+a[href^="#"] {
+    background-color: gold;
+}
+a[href*="example"] {
+    background-color: silver;
+}
+a[href*="insensitive"] {
+    color: cyan;
+}
+a[href$=".org"] {
+    color: red;
+}
+a[href^="https"] [href$=".org"] {
+    color: green;
+}
+* [lang^="en"] {
+    color: green;
+}
+*.warning {
+    color: red;
+}
+*#maincontent {
+    border: 1px solid blue;
+}
+h1, h3, span.titulo {
+    color: red;
+}
+#ad li.importante strong {
+    text-decoration: underline;
+    color: orange;
+}
+strong {
+    color: green;
+}
+div > strong {
+    color: purple;
+}
+span {
+    color: blue;
+}
+p ~ span {
+    color: red;
+}
+span {
+    color: blue;
+}
+p + span {
+    color: red;
+}
