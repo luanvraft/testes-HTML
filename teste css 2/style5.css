@@ -1,0 +1,15 @@
+p {
+    background-color: darkred;
+    border: 1px solid lightgray;
+    overflow: hidden;
+}
+img {
+    float: right;
+    height: 50px;
+    width: 50px;
+}
+h5 {
+    clear: right;
+    border: 6px solid black;
+    background-color: goldenrod;
+}

@@ -1,0 +1,18 @@
+.parent {
+    color: blue;
+    background-color: gray;
+    width: 500px;
+    height: 500px;
+}
+.especial.box {
+    color: red;
+}
+#b {
+    color: orange;
+}
+div > .box {
+    font-size: 2em;
+    background-color: white;
+    border: 1px solid;
+    margin: 10px;
+}
