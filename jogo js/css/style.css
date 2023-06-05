@@ -13,7 +13,7 @@ main {
     top: 50%;
     left: 50%;
     z-index: 1;
-    background-image: url("img/jo-ken-po.jpg");
+    background-image: url("../img/jo-ken-po.jpg");
     background-color: #332515;
     background-position: center center;
     background-repeat: no-repeat;
