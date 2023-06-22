@@ -1,0 +1,20 @@
+.parent {
+    color: blue;
+    background-color: gray;
+    width: 500px;
+    height: 500px;
+}
+.especial.box {
+    position: fixed ;
+    top: 20px;
+    left: 20px;
+    background-color: cyan;
+}
+.box {
+    font-size: 2em;
+    background-color: white;
+    width: 400px;
+    border: 1px solid black;
+    margin: 10px auto;
+    box-sizing: border-box;
+}

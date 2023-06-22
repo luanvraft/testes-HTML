@@ -1,9 +1,0 @@
-a::before {
-    content: '[';
-}
-a::after {
-    content: ']';
-}
-a[href^="https://"]::after {
-    content: '] (externo)';
-}
