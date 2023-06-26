@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="assets/js/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1 :style="myStyle">{{mensagem}}</h1>
+        <button v-on:click="exibirAlerta">Clique aqui</button>
+        <br><br>
+        <button v-on:click="mudaCor">Mude a cor do h1</button>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                mensagem: 'Olá, Vue.js! Meu olá, mundo!',
+                listas: [
+                    {
+                        id: 1,
+                        nome: 'Anderson Uchôa',
+                        idioma: 'Português'
+                    },
+                    {
+                        id: 2,
+                        nome: 'Uchôa',
+                        idioma: 'Inglês'
+                    },
+                    {
+                        id: 3,
+                        nome: 'Anderson Uchôa',
+                        idioma: 'Espanhol'
+                    }
+                ],
+            },
+            myStyle: {
+                color: 'blue'
+            },
+            verifica: true,
+            methods:{
+                exibirAlerta: function() {
+                    var mensgem = "Essa daqui é outra mensagem";
+                    alert(mensgem);
+                },
+                mudaCor: function() {
+                    this.verifica ? this.myStyle = {color: 'blue'} : this.myStyle = {color: 'red'};
+                    this.verifica = !this.verifica;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="assets/js/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul v-for="lista in listas">
+            <li> ID: <b> {{lista.id}}</b></li>
+            <li> NOME: <b> {{lista.nome}}</b></li>
+            <li> IDIOMA: <b> {{lista.idioma}}</b></li>
+        </ul>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                mensagem: '<u>Olá, Vue.js! Meu olá, mundo!</u>',
+                listas: [
+                    {
+                        id: 1,
+                        nome: 'Anderson Uchôa',
+                        idioma: 'Português'
+                    },
+                    {
+                        id: 2,
+                        nome: 'Uchôa',
+                        idioma: 'Inglês'
+                    },
+                    {
+                        id: 3,
+                        nome: 'Anderson Uchôa',
+                        idioma: 'Espanhol'
+                    }
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
