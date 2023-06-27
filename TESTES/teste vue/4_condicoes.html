@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="assets/js/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-if="numero > 4"> O número {{numero}} é maior que 4</h1>
+        <h1 v-else-if="numero == 4"> O número {{numero}} é igual a 4</h1>
+        <h1 v-else> O número não é maior nem igual a{{numero}}</h1>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                mensagem: '<u>Olá, Vue.js! Meu olá, mundo!</u>',
+                listas: [
+                    {
+                        id: 1,
+                        nome: 'Anderson Uchôa',
+                        idioma: 'Português'
+                    },
+                    {
+                        id: 2,
+                        nome: 'Uchôa',
+                        idioma: 'Inglês'
+                    },
+                    {
+                        id: 3,
+                        nome: 'Anderson Uchôa',
+                        idioma: 'Espanhol'
+                    }
+                ],
+                verifica: true,
+                numero: 5
+            }
+        })
+    </script>
+</body>
+</html>
