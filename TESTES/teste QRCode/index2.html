@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerador de QR Code</title>
+</head>
+<body>
+    <form id="qrCodeForm">
+        <label for="dataInput">Digite os dados para gerar o QR code:</label>
+        <input type="text" id="dataInput" placeholder="Digite os dados" required>
+        <button type="submit">Gerar QR code</button>
+    </form>
+
+    <div id="qrCodeContainer">
+
+    </div>
+
+    <script>
+        const qrCodeForm = document.getElementById('qrCodeForm');
+        const qrCodeContainer = document.getElementById('qrCodeContainer');
+
+        qrCodeForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const dataInput = document.getElementById('dataInput');
+            const data = dataInput.value.trim();
+
+            if (data !== '') {
+                generateQRCode(data);
+            }
+        });
+
+        function generateQRCode(data) {
+            const url = "https://api.qrcode-monkey.com/qr/custom";
+            const params = {
+                size: 300,
+                config:{
+                    body:"square",
+                    eye: "frame13"
+
+                },
+                data: data,
+                color: "#000000",
+                bgcolor: "#ffffff",
+                download: "false",
+                file: "svg"
+            };
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(params)
+            })
+            .then(response => response.json())
+            .then(responseData => {
+                const qrCodeImage = responseData.image;
+                qrCodeContainer.innerHTML = `<img src="${qrCodeImage}" alt="QR Code">`;
+            })
+            .catch(error => {
+                console.error('Erro ao gerar o QR code:', error);
+            });
+        }
+    </script>
+</body>
+</html>

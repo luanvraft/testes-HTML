@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pokedex</title>
+  <style>
+    #pokedex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .pokemon-card {
+      width: 200px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    
+    .pokemon-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .pokemon-image {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pokedex</h1>
+  <div id="pokedex"></div>
+
+  <script>
+    // Função para buscar os dados de um Pokémon na API
+    async function fetchPokemonData(pokemonId) {
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
+      const data = await response.json();
+      return data;
+    }
+
+    // Função para exibir os dados de um Pokémon na Pokedex
+    function displayPokemon(pokemon) {
+      const pokedex = document.getElementById('pokedex');
+
+      const pokemonCard = document.createElement('div');
+      pokemonCard.className = 'pokemon-card';
+
+      const pokemonName = document.createElement('div');
+      pokemonName.className = 'pokemon-name';
+      pokemonName.textContent = pokemon.name;
+
+      const pokemonImage = document.createElement('img');
+      pokemonImage.className = 'pokemon-image';
+      pokemonImage.src = pokemon.sprites.front_default;
+      pokemonImage.alt = pokemon.name;
+
+      pokemonCard.appendChild(pokemonName);
+      pokemonCard.appendChild(pokemonImage);
+      pokedex.appendChild(pokemonCard);
+    }
+
+    // Função principal para buscar e exibir os Pokémon
+    async function getPokemonData() {
+      try {
+        for (let i = 1; i <= 1000; i++) { // Buscar os primeiros 10 Pokémon (de 1 a 10)
+          const pokemonData = await fetchPokemonData(i);
+          displayPokemon(pokemonData);
+        }
+      } catch (error) {
+        console.log('Ocorreu um erro:', error);
+      }
+    }
+
+    getPokemonData();
+  </script>
+</body>
+</html>
